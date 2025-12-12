@@ -1,6 +1,6 @@
 ---
-title: Yantrasolve
-emoji: 🏢
+title: Project2 Quizzie
+emoji: 👀
 colorFrom: blue
 colorTo: green
 sdk: docker
@@ -9,22 +9,11 @@ license: mit
 short_description: An automated system to solve data-driven tasks using AI.
 ---
 
-# 🧩 YantraSolve – Autonomous AI Quiz Solver
-
-[![Hugging Face Space](https://img.shields.io/badge/🤗-Space-ff5c5c?logo=huggingface)](https://huggingface.co/spaces/mynkpdriitm/yantrasolve)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Python](https://img.shields.io/badge/python-3.11%2B-blue)](https://www.python.org/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?logo=fastapi)](https://fastapi.tiangolo.com/)
-[![LangGraph](https://img.shields.io/badge/LangGraph-Workflow-orange)](https://langchain-ai.github.io/langgraph/)
-
-**Author:** Mayank Kumar Poddar (<23f3004197@ds.study.iitm.ac.in>)  
-**GitHub:** [mayanklearns/yantrasolve](https://github.com/mayanklearns/yantrasolve)
-
 ---
 
 ## 📖 Overview
 
-`YantraSolve` is an **AI-powered autonomous quiz-solving agent** built for the **Tools in Data Science – Project 2** of the **IITM BS Degree Programme**.
+`Quizzie` is an **AI-powered autonomous quiz-solving agent** built for the **Tools in Data Science – Project 2** of the **IITM BS Degree Programme**.
 
 The system uses a **LangGraph state machine**, **LLMs (GPT/Gemini)**, and **Playwright headless browser** to:
 
@@ -101,8 +90,8 @@ Based on `project.md` requirements, the system handles:
 
 ### 1️⃣ Clone & Install
 ```bash
-git clone https://github.com/mayanklearns/yantrasolve.git
-cd yantrasolve
+git clone https://github.com/23f3002872/Quizzie
+cd Quizzie
 uv sync  # or: pip install -e .
 playwright install chromium
 ```
@@ -143,7 +132,7 @@ python main.py
 curl http://localhost:8000/health
 
 # Submit a quiz (runs in background)
-curl -X POST http://localhost:8000/quiz \
+curl -X POST http://localhost:8000/solve \
   -H "Content-Type: application/json" \
   -d '{"email":"your-email","secret":"your-secret","url":"https://quiz-url"}'
 ```
@@ -154,7 +143,7 @@ curl -X POST http://localhost:8000/quiz \
 
 ```bash
 # Build
-docker build -t yantrasolve .
+docker build -t Quizzie .
 
 # Run
 docker run -p 8000:8000 \
@@ -162,21 +151,21 @@ docker run -p 8000:8000 \
   -e STUDENT_EMAIL=xxx \
   -e LLM_API_KEY=xxx \
   -e GEMINI_API_KEY_1=xxx \
-  yantrasolve
+  Quizzie
 ```
 
 ### HuggingFace Spaces
 1. Create new Space with Docker SDK
 2. Push this repository
 3. Add secrets in Space settings
-4. Access via `https://your-space.hf.space/quiz`
+4. Access via `https://your-space.hf.space/`
 
 ---
 
 ## 🌲 Project Structure
 
 ```
-yantrasolve/
+Quizzie/
 ├── main.py                    # FastAPI entry point
 ├── app/
 │   ├── config/
@@ -221,7 +210,7 @@ Health check endpoint.
 {"status": "ok", "message": "Quiz Solver is running"}
 ```
 
-### `POST /quiz`
+### `POST /solve`
 Start quiz solving (runs in background).
 
 **Request:**
@@ -229,7 +218,7 @@ Start quiz solving (runs in background).
 {
   "email": "student@example.com",
   "secret": "your-secret-key",
-  "url": "https://example.com/quiz/1"
+  "url": "https://example.com/solve/1"
 }
 ```
 
@@ -354,10 +343,10 @@ MIT License - see [LICENSE](LICENSE) file.
 
 ## 📞 Contact
 
-**Mayank Kumar Poddar**
-- Email: 23f3004197@ds.study.iitm.ac.in
-- GitHub: [@mayanklearns](https://github.com/mayanklearns)
+**Khushi Choudhary**
+- Email: 23f3002872@ds.study.iitm.ac.in
+- GitHub: [@23f3002872](https://github.com/23f3002872)
 
 ---
 
-*Built with mass frustration and determination. 🚀*
+
