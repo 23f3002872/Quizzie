@@ -156,7 +156,7 @@ async def solve_quiz_task(
         logger.info(f"Background task finished for {email}")
 
 
-@app.post("/quiz")
+@app.post("/solve")
 async def receive_quiz(request: QuizRequest, background_tasks: BackgroundTasks):
     """
     Main endpoint to receive quiz tasks
